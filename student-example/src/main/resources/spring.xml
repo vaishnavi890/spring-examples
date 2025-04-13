@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!-- Address Bean (Constructor Injection) -->
+    <bean id="address" class="com.vaishnavi.practice.spring.model.Address">
+        <constructor-arg value="New York"/>
+        <constructor-arg value="10001"/>
+    </bean>
+
+    <!-- Student Bean (Mixed Injection) -->
+    <bean id="student" class="com.vaishnavi.practice.spring.model.Student">
+        <constructor-arg value="John Doe"/>
+        <constructor-arg value="101"/>
+        <constructor-arg ref="address"/>
+    </bean>
+
+    <!-- StudentService Bean (Setter Injection) -->
+    <bean id="studentService" class="com.vaishnavi.practice.spring.service.StudentService">
+        <property name="student" ref="student"/>
+    </bean>
+
+</beans>
