@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="solarService" class="com.vaishnavi.practice.spring.service.SolarService">
+        <property name="customerName" value="Vaishnavi Solar"/>
+        <property name="installation" ref="installation"/>
+    </bean>
+
+    <bean id="installation" class="com.vaishnavi.practice.spring.model.Installation">
+        <property name="location" value="Pune"/>
+        <property name="panel" ref="panel"/>
+    </bean>
+
+    <bean id="panel" class="com.vaishnavi.practice.spring.model.SolarPanel">
+        <property name="panelId" value="SP-1001"/>
+        <property name="type" value="Mono-crystalline"/>
+    </bean>
+
+</beans>
